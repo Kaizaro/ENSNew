@@ -1,13 +1,26 @@
+// @flow
+
 // Initial state
 import {AUTH_TYPES} from '../types/authTypes';
 
-const initialState = {
+type AuthReducerSchema = {
+    token: string,
+};
+
+type ActionSchema = {
+    type: string,
+    payload?: any,
+};
+
+const initialState: AuthReducerSchema = {
     token: '',
-    devAPI: true,
 };
 
 // Reducer
-export const authReducer = (state = initialState, action) => {
+export const authReducer = (
+    state: AuthReducerSchema = initialState,
+    action: ActionSchema,
+) => {
     switch (action.type) {
         case AUTH_TYPES.LOGOUT:
             return {state: initialState};
