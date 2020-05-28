@@ -1,0 +1,5 @@
+export const AUTH_TYPES = {
+    LOGOUT: 'LOGOUT',
+    SET_TOKEN: 'SET_TOKEN',
+    CLEAR_TOKEN: 'CLEAR_TOKEN',
+};
