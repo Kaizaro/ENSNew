@@ -1,10 +1,8 @@
 import React from 'react';
-import {Image} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BookmarksStackSwitcher} from './BookmarksStack';
 import {RentStackSwitcher} from './RentStack';
 import {ProfileStackSwitcher} from './ProfileStack';
-import {getLocale} from '../../../localisation/LocalisationFuncs';
 import {APP_STYLES} from '../../../styleguide';
 import {scaleFontSize, scaleVertical} from '../../../lib/scaleUtils';
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, Text, TextInput, View} from 'react-native';
-import {getLocale} from '../../../helpers/localisation/LocalisationFuncs';
 import {APP_STYLES} from '../../../helpers/styleguide';
 import {scaleHorizontal, scaleVertical} from '../../../helpers/lib/scaleUtils';
 
@@ -14,7 +13,7 @@ export const PhoneInputField = ({
     return (
         <View style={{...styles.container, ...style}}>
             <Text style={APP_STYLES.TEXT.SCREEN_TITLE}>
-                {getLocale('input_phone_number').toUpperCase()}
+                {'Введите номер телефона'.toUpperCase()}
             </Text>
             <TextInput
                 style={styles.inputField}

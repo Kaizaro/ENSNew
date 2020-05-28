@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {Container} from '../../components/Container';
-import {getLocale} from '../../../helpers/localisation/LocalisationFuncs';
 import {APP_STYLES} from '../../../helpers/styleguide';
 import {ButtonRegular} from '../../components/buttons/ButtonRegular';
 import {scaleVertical} from '../../../helpers/lib/scaleUtils';
@@ -23,11 +22,11 @@ export const EmailInput = ({}) => {
             <View style={styles.container}>
                 <View style={styles.data}>
                     <Text style={APP_STYLES.TEXT.HEADER}>
-                        {getLocale('input_your_email').toUpperCase()}
+                        {'input_your_email'.toUpperCase()}
                     </Text>
                     <View style={styles.descriptionContainer}>
                         <Text style={APP_STYLES.TEXT.REGULAR}>
-                            {getLocale('input_your_email_text')}
+                            {'input_your_email_text'}
                         </Text>
                     </View>
                     <EmailInputField
@@ -38,7 +37,7 @@ export const EmailInput = ({}) => {
                 </View>
                 <ButtonRegular
                     style={styles.button}
-                    title={getLocale('continue')}
+                    title={'continue'}
                     onPress={onContinueButtonPress}
                 />
             </View>

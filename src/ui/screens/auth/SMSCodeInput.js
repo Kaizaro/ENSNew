@@ -8,7 +8,6 @@ import {
     scaleLineHeight,
     scaleVertical,
 } from '../../../helpers/lib/scaleUtils';
-import {getLocale} from '../../../helpers/localisation/LocalisationFuncs';
 import {ButtonWithoutBorder} from '../../components/buttons/ButtonWithoutBorder';
 import {APP_STYLES} from '../../../helpers/styleguide';
 
@@ -51,19 +50,19 @@ export const SMSCodeInput = () => {
             />
             <View style={styles.help}>
                 <Text style={styles.helpText}>
-                    {getLocale('code_not_delivered').toUpperCase()}
+                    {'code_not_delivered'.toUpperCase()}
                 </Text>
             </View>
             <View style={styles.timerContainer}>
                 <Text style={styles.timerText}>
-                    {getLocale('resend_code_through')}
+                    {'resend_code_through'}
                 </Text>
             </View>
             <ButtonWithoutBorder
                 style={styles.secondaryButton}
                 textStyle={styles.secondaryButtonText}
                 onPress={onResendSMSButtonPress}
-                title={getLocale('resend_code')}
+                title={'resend_code'}
             />
         </Container>
     );

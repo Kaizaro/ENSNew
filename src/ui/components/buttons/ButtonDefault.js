@@ -19,7 +19,11 @@ export const ButtonDefault = ({
     // render block
     return (
         <TouchableOpacity
-            style={innerStyle.container}
+            style={
+                disabled
+                    ? {...innerStyle.container, opacity: 0.5}
+                    : innerStyle.container
+            }
             onPress={onPress}
             disabled={disabled}>
             {!loading && (

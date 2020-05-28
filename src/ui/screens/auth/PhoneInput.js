@@ -2,17 +2,17 @@ import React, {useState} from 'react';
 import {AsYouType} from 'libphonenumber-js';
 import {Container} from '../../components/Container';
 import {PhoneInputField} from '../../components/inputFields/PhoneInputField';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {
     scaleHorizontal,
     scaleLineHeight,
     scaleVertical,
 } from '../../../helpers/lib/scaleUtils';
 import {ButtonRegular} from '../../components/buttons/ButtonRegular';
-import {getLocale} from '../../../helpers/localisation/LocalisationFuncs';
 import {ButtonWithoutBorder} from '../../components/buttons/ButtonWithoutBorder';
 import {APP_STYLES} from '../../../helpers/styleguide';
 import {routeNavigate} from '../../../helpers/navigation/funcs/NavigationFuncs';
+import logo from '../../../../assets/logo.jpg';
 
 export const PhoneInput = props => {
     const [phoneNumber, onPhoneNumberChanged] = useState('');
@@ -61,32 +61,38 @@ export const PhoneInput = props => {
     // render block
     return (
         <Container>
+            <Image source={logo} resizeMode={'contain'} style={styles.logo} />
             <PhoneInputField
                 style={styles.phoneInput}
                 phoneNumber={new AsYouType('RU').input(phoneNumber)}
                 onPhoneNumberChanged={phoneNumberMatcher}
             />
             <ButtonRegular
+                disabled={!isButtonActive()}
                 style={styles.mainButton}
-                title={getLocale('continue')}
+                title={'Продолжить'}
                 onPress={onContinueButtonPress}
             />
             <View style={styles.help}>
                 <Text style={styles.helpText}>
-                    {getLocale('registration_already_done').toUpperCase()}
+                    {'Уже зарегистрированы?'.toUpperCase()}
                 </Text>
             </View>
             <ButtonWithoutBorder
                 style={styles.secondaryButton}
                 textStyle={styles.secondaryButtonText}
                 onPress={onLoginButtonPress}
-                title={getLocale('login')}
+                title={'Войти'}
             />
         </Container>
     );
 };
 
 const styles = StyleSheet.create({
+    logo: {
+        width: scaleHorizontal(250),
+        height: scaleHorizontal(100),
+    },
     phoneInput: {
         marginTop: scaleVertical(146),
     },

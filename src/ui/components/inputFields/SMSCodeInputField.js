@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, Text, TextInput, View} from 'react-native';
-import {getLocale} from '../../../helpers/localisation/LocalisationFuncs';
 import {APP_STYLES} from '../../../helpers/styleguide';
 import SmoothPinCodeInput from 'react-native-smooth-pincode-input';
 import {scaleHorizontal, scaleVertical} from '../../../helpers/lib/scaleUtils';
@@ -15,7 +14,7 @@ export const SMSCodeInputField = ({
     return (
         <View style={{...styles.container, ...style}}>
             <Text style={APP_STYLES.TEXT.SCREEN_TITLE}>
-                {getLocale('input_smscode').toUpperCase()}
+                {'input_smscode'.toUpperCase()}
             </Text>
             <SmoothPinCodeInput
                 containerStyle={styles.inputSMS}
