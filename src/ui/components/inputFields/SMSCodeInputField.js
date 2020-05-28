@@ -14,7 +14,7 @@ export const SMSCodeInputField = ({
     return (
         <View style={{...styles.container, ...style}}>
             <Text style={APP_STYLES.TEXT.SCREEN_TITLE}>
-                {'input_smscode'.toUpperCase()}
+                {'Введите код'.toUpperCase()}
             </Text>
             <SmoothPinCodeInput
                 containerStyle={styles.inputSMS}

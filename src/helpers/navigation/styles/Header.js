@@ -1,8 +1,8 @@
 import {APP_STYLES} from '../../styleguide';
-import {scaleHorizontal} from '../../lib/scaleUtils';
+import {scaleHorizontal, scaleVertical} from '../../lib/scaleUtils';
 
 export const Header = {
-    headerStatusBarHeight: 44,
+    headerStatusBarHeight: scaleVertical(20),
     headerTransparent: true,
     headerTintColor: APP_STYLES.COLOR.BLACK,
     headerTitleStyle: APP_STYLES.TEXT.HEADER,

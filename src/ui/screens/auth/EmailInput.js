@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {Container} from '../../components/Container';
 import {APP_STYLES} from '../../../helpers/styleguide';
 import {ButtonRegular} from '../../components/buttons/ButtonRegular';
-import {scaleVertical} from '../../../helpers/lib/scaleUtils';
+import {scaleHorizontal, scaleVertical} from '../../../helpers/lib/scaleUtils';
 import {EmailInputField} from '../../components/inputFields/EmailInputField';
 import {routeReset} from '../../../helpers/navigation/funcs/NavigationFuncs';
+import logo from '../../../../assets/logo.jpg';
 
 export const EmailInput = ({}) => {
     // define block
@@ -13,20 +14,27 @@ export const EmailInput = ({}) => {
 
     // logic block
     const onContinueButtonPress = () => {
-        routeReset('KYCStack');
+        routeReset('MainStack');
     };
 
     // render block
     return (
         <Container>
+            <Image source={logo} resizeMode={'contain'} style={styles.logo} />
             <View style={styles.container}>
                 <View style={styles.data}>
                     <Text style={APP_STYLES.TEXT.HEADER}>
-                        {'input_your_email'.toUpperCase()}
+                        {'Введите Ваш email'.toUpperCase()}
                     </Text>
                     <View style={styles.descriptionContainer}>
-                        <Text style={APP_STYLES.TEXT.REGULAR}>
-                            {'input_your_email_text'}
+                        <Text
+                            style={{
+                                ...APP_STYLES.TEXT.REGULAR,
+                                textAlign: 'left',
+                            }}>
+                            {
+                                'Email используется для регистрации аккаунта и связи с личным кабинетом'
+                            }
                         </Text>
                     </View>
                     <EmailInputField
@@ -34,18 +42,22 @@ export const EmailInput = ({}) => {
                         onEmailChange={onEmailChanged}
                         style={styles.inputEmail}
                     />
+                    <ButtonRegular
+                        style={styles.button}
+                        title={'Продолжить'}
+                        onPress={onContinueButtonPress}
+                    />
                 </View>
-                <ButtonRegular
-                    style={styles.button}
-                    title={'continue'}
-                    onPress={onContinueButtonPress}
-                />
             </View>
         </Container>
     );
 };
 
 const styles = StyleSheet.create({
+    logo: {
+        width: scaleHorizontal(250),
+        height: scaleHorizontal(100),
+    },
     container: {
         width: '100%',
         height: '100%',
@@ -63,6 +75,6 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     button: {
-        marginBottom: scaleVertical(50),
+        marginTop: scaleVertical(250),
     },
 });

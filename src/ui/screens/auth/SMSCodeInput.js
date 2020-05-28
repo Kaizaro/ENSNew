@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {Container} from '../../components/Container';
 import {SMSCodeInputField} from '../../components/inputFields/SMSCodeInputField';
 import {routeNavigate} from '../../../helpers/navigation/funcs/NavigationFuncs';
 import {
     scaleFontSize,
+    scaleHorizontal,
     scaleLineHeight,
     scaleVertical,
 } from '../../../helpers/lib/scaleUtils';
 import {ButtonWithoutBorder} from '../../components/buttons/ButtonWithoutBorder';
 import {APP_STYLES} from '../../../helpers/styleguide';
+import logo from '../../../../assets/logo.jpg';
 
 export const SMSCodeInput = () => {
     // define block
@@ -42,6 +44,8 @@ export const SMSCodeInput = () => {
     // render block
     return (
         <Container>
+            <Image source={logo} resizeMode={'contain'} style={styles.logo} />
+            <Text style={styles.introText}>Введите полученный в SMS код</Text>
             <SMSCodeInputField
                 SMSCode={SMSCode}
                 onSMSCodeChanged={onSMSCodeChanged}
@@ -49,28 +53,29 @@ export const SMSCodeInput = () => {
                 style={styles.inputField}
             />
             <View style={styles.help}>
-                <Text style={styles.helpText}>
-                    {'code_not_delivered'.toUpperCase()}
-                </Text>
-            </View>
-            <View style={styles.timerContainer}>
-                <Text style={styles.timerText}>
-                    {'resend_code_through'}
-                </Text>
+                <Text style={styles.helpText}>{'Не получили код?'}</Text>
             </View>
             <ButtonWithoutBorder
                 style={styles.secondaryButton}
                 textStyle={styles.secondaryButtonText}
                 onPress={onResendSMSButtonPress}
-                title={'resend_code'}
+                title={'Получить новый код'}
             />
         </Container>
     );
 };
 
 const styles = StyleSheet.create({
+    logo: {
+        width: scaleHorizontal(250),
+        height: scaleHorizontal(100),
+    },
+    introText: {
+        marginTop: scaleVertical(100),
+        ...APP_STYLES.TEXT.REGULAR,
+    },
     inputField: {
-        marginTop: scaleVertical(146),
+        marginTop: scaleVertical(20),
     },
     help: {
         marginTop: scaleVertical(79),

@@ -24,6 +24,9 @@ export const AuthStackSwitcher = () => {
             <AuthStack.Screen
                 name={'SMSCodeInput'}
                 component={SMSCodeInput}
+                options={{
+                    headerShown: false,
+                }}
                 // options={{
                 //     title: 'Регистрация'.toUpperCase(),
                 //     ...Header,
@@ -32,6 +35,9 @@ export const AuthStackSwitcher = () => {
             <AuthStack.Screen
                 name={'EmailInput'}
                 component={EmailInput}
+                options={{
+                    headerShown: false,
+                }}
                 // options={{
                 //     title: 'Регистрация'.toUpperCase(),
                 //     ...Header,
