@@ -5,6 +5,8 @@ import {AUTH_TYPES} from '../types/authTypes';
 
 type AuthReducerSchema = {
     token: string,
+    phone: string,
+    password: string,
 };
 
 type ActionSchema = {
@@ -14,6 +16,8 @@ type ActionSchema = {
 
 const initialState: AuthReducerSchema = {
     token: '',
+    phone: '',
+    password: '',
 };
 
 // Reducer
