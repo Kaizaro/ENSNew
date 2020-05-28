@@ -4,7 +4,6 @@ import {applyMiddleware, createStore} from 'redux';
 import {createLogger} from 'redux-logger/src';
 import {persistStore, persistReducer} from 'redux-persist';
 import {composeWithDevTools} from 'redux-devtools-extension';
-import createSagaMiddleware from 'redux-saga';
 
 // import reducers
 import rootReducer from './reducers';
@@ -17,14 +16,10 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const sagaMiddleware = createSagaMiddleware();
-
 const store = createStore(
     persistedReducer,
-    composeWithDevTools(applyMiddleware(sagaMiddleware, createLogger())),
+    composeWithDevTools(applyMiddleware(createLogger())),
 );
-
-sagaMiddleware.run(rootSaga);
 
 let persistor = persistStore(store);
 export {store, persistor};
