@@ -2,11 +2,11 @@ import React from 'react';
 import {Container} from '../../../components/Container';
 import {Text} from 'react-native';
 
-export const RentScreen = () => {
+export const ControllersScreen = () => {
     // render block
     return (
         <Container>
-            <Text>RentScreen</Text>
+            <Text>ControllersScreen</Text>
         </Container>
     );
 };

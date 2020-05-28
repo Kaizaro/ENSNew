@@ -1,7 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {BookmarksStackSwitcher} from './BookmarksStack';
-import {RentStackSwitcher} from './RentStack';
+import {DashboardStackSwitcher} from './DashboardStack';
+import {ControllerStackSwitcher} from './ControllersStack';
 import {ProfileStackSwitcher} from './ProfileStack';
 import {APP_STYLES} from '../../../styleguide';
 import {scaleFontSize, scaleVertical} from '../../../lib/scaleUtils';
@@ -22,24 +22,24 @@ export const MainStackSwitcher = () => {
                 tabStyle: tabStyle,
             }}>
             <Tab.Screen
-                name={'BookmarksStack'}
-                component={BookmarksStackSwitcher}
+                name={'DashboardStack'}
+                component={DashboardStackSwitcher}
                 options={{
-                    // title: getLocale('bookmarks').toUpperCase(),
+                    title: 'Дашборд'.toUpperCase(),
                 }}
             />
             <Tab.Screen
-                name={'RentStack'}
-                component={RentStackSwitcher}
+                name={'ControllersStack'}
+                component={ControllerStackSwitcher}
                 options={{
-                    // title: getLocale('rent').toUpperCase(),
+                    title: 'Контроллеры'.toUpperCase(),
                 }}
             />
             <Tab.Screen
                 name={'ProfileStack'}
                 component={ProfileStackSwitcher}
                 options={{
-                    // title: getLocale('profile').toUpperCase(),
+                    title: 'Профиль'.toUpperCase(),
                 }}
             />
         </Tab.Navigator>
@@ -48,8 +48,10 @@ export const MainStackSwitcher = () => {
 
 const tabStyle = {
     height: scaleVertical(49),
-    paddingTop: scaleVertical(5),
-    paddingBottom: scaleVertical(2),
+    justifyContent: 'center',
+    alignItems: 'center',
+    // paddingTop: scaleVertical(5),
+    // paddingBottom: scaleVertical(2),
 };
 
 const labelStyle = {

@@ -2,11 +2,11 @@ import React from 'react';
 import {Container} from '../../../components/Container';
 import {Text} from 'react-native';
 
-export const BookmarksScreen = () => {
+export const DashboardScreen = () => {
     // render block
     return (
         <Container>
-            <Text>BookmarksScreen</Text>
+            <Text>DashboardScreen</Text>
         </Container>
     );
 };
