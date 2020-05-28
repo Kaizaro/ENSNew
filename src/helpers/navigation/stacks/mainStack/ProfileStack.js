@@ -10,6 +10,7 @@ export const ProfileStackSwitcher = () => {
             <ProfileStack.Screen
                 name={'ProfileScreen'}
                 component={ProfileScreen}
+                options={{headerShown: false}}
             />
         </ProfileStack.Navigator>
     );

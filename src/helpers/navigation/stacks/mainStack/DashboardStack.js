@@ -10,6 +10,7 @@ export const DashboardStackSwitcher = () => {
             <DashboardStack.Screen
                 name={'DashboardScreen'}
                 component={DashboardScreen}
+                options={{headerShown: false}}
             />
         </DashboardStack.Navigator>
     );

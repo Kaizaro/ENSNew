@@ -10,6 +10,7 @@ export const ControllerStackSwitcher = () => {
             <ControllersStack.Screen
                 name={'RentScreen'}
                 component={ControllersScreen}
+                options={{headerShown: false}}
             />
         </ControllersStack.Navigator>
     );
