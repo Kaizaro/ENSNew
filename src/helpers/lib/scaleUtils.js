@@ -1,26 +1,32 @@
+// @flow
 import {Dimensions, PixelRatio} from 'react-native';
 
-const {width, height} = Dimensions.get('window');
-const ratio = PixelRatio.getFontScale();
-const idealWidth = 375;
-const idealHeight = 812;
+type DimensionsScheme = {
+    width: number,
+    height: number,
+};
 
-export const scaleHorizontal = inWidth => {
-    const delimiter = idealWidth / inWidth;
+const {width, height}: DimensionsScheme = Dimensions.get('window');
+const ratio: number = PixelRatio.getFontScale();
+const idealWidth: number = 375;
+const idealHeight: number = 812;
+
+export const scaleHorizontal: Function = (inWidth: number): number => {
+    const delimiter: number = idealWidth / inWidth;
     return width / delimiter;
 };
 
-export const scaleVertical = inHeight => {
-    const delimiter = idealHeight / inHeight;
+export const scaleVertical: Function = (inHeight: number): number => {
+    const delimiter: number = idealHeight / inHeight;
     return height / delimiter;
 };
 
-export const scaleFontSize = fontSize => {
-    const divisionRatio = idealWidth / (fontSize / ratio);
+export const scaleFontSize: Function = (fontSize: number): number => {
+    const divisionRatio: number = idealWidth / (fontSize / ratio);
     return width / divisionRatio;
 };
 
-export const scaleLineHeight = lineHeight => {
-    const divisionRatio = idealHeight / (lineHeight / ratio);
+export const scaleLineHeight: Function = (lineHeight: number): number => {
+    const divisionRatio: number = idealHeight / (lineHeight / ratio);
     return height / divisionRatio;
 };
