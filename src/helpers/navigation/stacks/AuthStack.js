@@ -4,7 +4,6 @@ import {PhoneInput} from '../../../ui/screens/auth/PhoneInput';
 import {SMSCodeInput} from '../../../ui/screens/auth/SMSCodeInput';
 import {EmailInput} from '../../../ui/screens/auth/EmailInput';
 import {Header} from '../styles/Header';
-import {getLocale} from '../../localisation/LocalisationFuncs';
 
 const AuthStack = createStackNavigator();
 
@@ -15,7 +14,7 @@ export const AuthStackSwitcher = () => {
                 name={'PhoneInput'}
                 component={PhoneInput}
                 options={{
-                    title: getLocale('registration').toUpperCase(),
+                    title: 'Регистрация'.toUpperCase(),
                     ...Header,
                 }}
             />
@@ -23,7 +22,7 @@ export const AuthStackSwitcher = () => {
                 name={'SMSCodeInput'}
                 component={SMSCodeInput}
                 options={{
-                    title: getLocale('registration').toUpperCase(),
+                    title: 'Регистрация'.toUpperCase(),
                     ...Header,
                 }}
             />
@@ -31,7 +30,7 @@ export const AuthStackSwitcher = () => {
                 name={'EmailInput'}
                 component={EmailInput}
                 options={{
-                    title: getLocale('registration').toUpperCase(),
+                    title: 'Регистрация'.toUpperCase(),
                     ...Header,
                 }}
             />

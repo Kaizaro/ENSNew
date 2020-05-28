@@ -1,14 +1,6 @@
-import React, {useEffect, useLayoutEffect} from 'react';
-import {
-    Dimensions,
-    Image,
-    PixelRatio,
-    SafeAreaView,
-    StyleSheet,
-    Text, useWindowDimensions,
-} from 'react-native';
+import React, {useEffect} from 'react';
+import {StyleSheet, Text} from 'react-native';
 import {router} from '../../helpers/navigation/funcs/Router';
-import {API_CONFIG} from '../../helpers/API/APIConfig';
 import {APP_STYLES} from '../../helpers/styleguide';
 import {Container} from '../components/Container';
 

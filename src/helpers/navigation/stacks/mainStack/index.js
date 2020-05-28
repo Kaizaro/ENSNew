@@ -1,22 +1,12 @@
 import React from 'react';
 import {Image} from 'react-native';
-import {useSafeArea} from 'react-native-safe-area-context';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {SearchStackSwitcher} from './SearchStack';
 import {BookmarksStackSwitcher} from './BookmarksStack';
 import {RentStackSwitcher} from './RentStack';
 import {ProfileStackSwitcher} from './ProfileStack';
 import {getLocale} from '../../../localisation/LocalisationFuncs';
 import {APP_STYLES} from '../../../styleguide';
-import {
-    scaleFontSize,
-    scaleHorizontal,
-    scaleVertical,
-} from '../../../lib/scaleUtils';
-import searchIcon from '../../../../../assets/icons/tabBar/search.png';
-import bookmarksIcon from '../../../../../assets/icons/tabBar/bookmarks.png';
-import rentIcon from '../../../../../assets/icons/tabBar/rent.png';
-import profileIcon from '../../../../../assets/icons/tabBar/profile.png';
+import {scaleFontSize, scaleVertical} from '../../../lib/scaleUtils';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,59 +24,24 @@ export const MainStackSwitcher = () => {
                 tabStyle: tabStyle,
             }}>
             <Tab.Screen
-                name={'SearchStack'}
-                component={SearchStackSwitcher}
-                options={{
-                    title: getLocale('search').toUpperCase(),
-                    tabBarIcon: state => (
-                        <Image
-                            source={searchIcon}
-                            resizeMode={'contain'}
-                            style={tabIconStyle(state.focused)}
-                        />
-                    ),
-                }}
-            />
-            <Tab.Screen
                 name={'BookmarksStack'}
                 component={BookmarksStackSwitcher}
                 options={{
-                    title: getLocale('bookmarks').toUpperCase(),
-                    tabBarIcon: state => (
-                        <Image
-                            source={bookmarksIcon}
-                            resizeMode={'contain'}
-                            style={tabIconStyle(state.focused)}
-                        />
-                    ),
+                    // title: getLocale('bookmarks').toUpperCase(),
                 }}
             />
             <Tab.Screen
                 name={'RentStack'}
                 component={RentStackSwitcher}
                 options={{
-                    title: getLocale('rent').toUpperCase(),
-                    tabBarIcon: state => (
-                        <Image
-                            source={rentIcon}
-                            resizeMode={'contain'}
-                            style={tabIconStyle(state.focused)}
-                        />
-                    ),
+                    // title: getLocale('rent').toUpperCase(),
                 }}
             />
             <Tab.Screen
                 name={'ProfileStack'}
                 component={ProfileStackSwitcher}
                 options={{
-                    title: getLocale('profile').toUpperCase(),
-                    tabBarIcon: state => (
-                        <Image
-                            source={profileIcon}
-                            resizeMode={'contain'}
-                            style={tabIconStyle(state.focused)}
-                        />
-                    ),
+                    // title: getLocale('profile').toUpperCase(),
                 }}
             />
         </Tab.Navigator>
