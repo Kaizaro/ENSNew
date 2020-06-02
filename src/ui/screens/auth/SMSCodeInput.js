@@ -11,7 +11,7 @@ import {
 } from '../../../helpers/lib/scaleUtils';
 import {ButtonWithoutBorder} from '../../components/buttons/ButtonWithoutBorder';
 import {APP_STYLES} from '../../../helpers/styleguide';
-import logo from '../../../../assets/logo.jpg';
+import logo from '../../../../assets/sampleLogo.png';
 
 export const SMSCodeInput = () => {
     // define block
