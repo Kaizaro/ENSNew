@@ -12,20 +12,21 @@ import {
 } from '../../../../helpers/lib/scaleUtils';
 import {ButtonRegular} from '../../../components/buttons/ButtonRegular';
 import {routeNavigate} from '../../../../helpers/navigation/funcs/NavigationFuncs';
+import {SENSORS} from '../../../../constants/data/sensors';
 
 export const DashboardScreen = () => {
     // logic block
     const onAddControllerButtonPress = (): void => {
-        routeNavigate('AddController');
+        routeNavigate('AddSensor');
     };
 
     const onControllerPress = (): void => {
         Alert.alert(
             'Выберите действие',
-            'Вы хотите изменить конфигурацию контроллера?',
+            'Вы хотите изменить конфигурацию датчика?',
             [
                 {
-                    text: 'Сброс контроллера',
+                    text: 'Удалить датчик',
                     onPress: onDeleteButtonPress,
                 },
                 {
@@ -41,8 +42,8 @@ export const DashboardScreen = () => {
 
     const onDeleteButtonPress = (): void => {
         Alert.alert(
-            'Подтверждение сброса контроллера',
-            'Вы точно хотите сбросить контроллер до заводских настроек?',
+            'Подтверждение удаления датчика',
+            'Вы точно хотите удалить датчик?',
             [
                 {
                     text: 'Отменить',
@@ -64,24 +65,30 @@ export const DashboardScreen = () => {
                         ...APP_STYLES.TEXT.SCREEN_TITLE,
                         marginBottom: scaleVertical(40),
                     }}>
-                    Список контроллеров в сети
+                    Список датчиков
                 </Text>
-                {CONTROLLERS.map(controller => {
-                    console.log(controller);
+                {SENSORS.map(sensor => {
+                    console.log(sensor);
                     return (
-                        <TouchableOpacity style={styles.row} onPress={onControllerPress}>
+                        <TouchableOpacity
+                            style={styles.row}
+                            onPress={onControllerPress}>
                             <Text
                                 style={{
                                     ...APP_STYLES.TEXT.LIST_ITEM,
                                     fontSize: scaleFontSize(18),
                                     color: APP_STYLES.COLOR.BLACK,
                                 }}>
-                                {controller.name}
+                                {sensor.sensorType}
                             </Text>
-                            {/*<ButtonTransparent*/}
-                            {/*    style={styles.settingButton}*/}
-                            {/*    title={'Настройка'}*/}
-                            {/*/>*/}
+                            <Text
+                                style={{
+                                    ...APP_STYLES.TEXT.LIST_ITEM,
+                                    fontSize: scaleFontSize(18),
+                                    color: APP_STYLES.COLOR.BLACK,
+                                }}>
+                                {sensor.value}
+                            </Text>
                         </TouchableOpacity>
                     );
                 })}

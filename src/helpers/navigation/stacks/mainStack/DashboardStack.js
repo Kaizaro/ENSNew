@@ -13,7 +13,7 @@ export const DashboardStackSwitcher = () => {
                 component={DashboardScreen}
                 options={{headerShown: false}}
             />
-            <DashboardScreen.Screen
+            <DashboardStack.Screen
                 name={'AddSensor'}
                 component={AddSensor}
                 options={{headerShown: false}}
