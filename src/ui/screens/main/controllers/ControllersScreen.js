@@ -11,9 +11,14 @@ import {
     scaleVertical,
 } from '../../../../helpers/lib/scaleUtils';
 import {ButtonRegular} from '../../../components/buttons/ButtonRegular';
+import {routeNavigate} from '../../../../helpers/navigation/funcs/NavigationFuncs';
 
 export const ControllersScreen: () => React$Node = () => {
     // logic block
+    const onAddControllerButtonPress = (): void => {
+        routeNavigate('AddController');
+    };
+
     const onControllerPress = (): void => {
         Alert.alert(
             'Выберите действие',
@@ -28,7 +33,7 @@ export const ControllersScreen: () => React$Node = () => {
                     onPress: () => console.log('Cancel Pressed'),
                     style: 'cancel',
                 },
-                {text: 'OK', onPress: () => console.log('OK Pressed')}
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
             ],
             {cancelable: false},
         );
@@ -84,6 +89,7 @@ export const ControllersScreen: () => React$Node = () => {
             <ButtonRegular
                 title={'Добавить'}
                 style={{marginBottom: scaleVertical(20)}}
+                onPress={onAddControllerButtonPress}
             />
         </Container>
     );
