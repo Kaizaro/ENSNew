@@ -6,7 +6,7 @@ import {ButtonRegular} from '../../components/buttons/ButtonRegular';
 import {scaleHorizontal, scaleVertical} from '../../../helpers/lib/scaleUtils';
 import {EmailInputField} from '../../components/inputFields/EmailInputField';
 import {routeReset} from '../../../helpers/navigation/funcs/NavigationFuncs';
-import logo from '../../../../assets/logo.jpg';
+import logo from '../../../../assets/sampleLogo.png';
 
 export const EmailInput = ({}) => {
     // define block

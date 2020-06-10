@@ -12,7 +12,7 @@ import {ButtonRegular} from '../../components/buttons/ButtonRegular';
 import {ButtonWithoutBorder} from '../../components/buttons/ButtonWithoutBorder';
 import {APP_STYLES} from '../../../helpers/styleguide';
 import {routeNavigate} from '../../../helpers/navigation/funcs/NavigationFuncs';
-import logo from '../../../../assets/logo.jpg';
+import logo from '../../../../assets/sampleLogo.png';
 
 export const PhoneInput = props => {
     const [phoneNumber, onPhoneNumberChanged] = useState('');
